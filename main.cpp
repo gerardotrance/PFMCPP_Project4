@@ -44,5 +44,5 @@ send me a DM to check your pull request
 #include <iostream>
 int main()
 {
-    std::cout << "good to go!" << std::endl;
+    std::cout << "good to go !" << std::endl;
 }
