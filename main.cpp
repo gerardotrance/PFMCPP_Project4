@@ -40,6 +40,8 @@ send me a DM to check your pull request
 
  Wait for my code review.
  */
+#include <iostream>
+
 struct FloatType
 {
     
@@ -86,6 +88,50 @@ float FloatType::multiply(float lhs, float rhs)
 float FloatType::divide(float lhs, float rhs)
 {
     return lhs / rhs;
+}
+
+double DoubleType::add(double lhs, double rhs)
+{
+    return lhs + rhs;
+}
+
+double DoubleType::subtract(double lhs, double rhs)
+{
+    return lhs - rhs;
+}
+
+double DoubleType::multiply(double lhs, double rhs)
+{
+    return lhs * rhs;
+}
+
+double DoubleType::divide(double lhs, double rhs)
+{
+    return lhs / rhs;
+}
+
+int IntType::add(int lhs, int rhs)
+{
+    return lhs + rhs;
+}
+
+int IntType::subtract(int lhs, int rhs)
+{
+    return lhs - rhs;
+}
+
+int IntType::multiply(int lhs, int rhs)
+{
+    return lhs * rhs;
+}
+
+int IntType::divide(int lhs, int rhs)
+{
+    if (lhs || rhs < 1)
+    {
+        std::cout << "dividing by 0 is not allowed in this type";
+    }
+    return  lhs / rhs;
 }
 
 #include <iostream>
