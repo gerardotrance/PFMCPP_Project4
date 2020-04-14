@@ -44,30 +44,24 @@ send me a DM to check your pull request
 
 struct FloatType
 {
-    
     float add(float lhs, float rhs);
     float subtract(float lhs, float rhs);
     float multiply(float lhs, float rhs);
     float divide(float lhs, float rhs);
-
 };
 struct DoubleType
 {
-    
     double add(double lhs, double rhs);
     double subtract(double lhs, double rhs);
     double multiply(double lhs, double rhs);
     double divide(double lhs, double rhs);
-
 };
 struct IntType
 {
-    
     int add(int lhs, int rhs);
     int subtract(int lhs, int rhs);
     int multiply(int lhs, int rhs);
     int divide(int lhs, int rhs);
-
 };
 
 float FloatType::add(float lhs, float rhs)
@@ -129,7 +123,7 @@ int IntType::divide(int lhs, int rhs)
 {
     if (rhs == 0)
     {
-        std::cout << "dividing by 0 is not allowed in this type";
+        std::cout << "dividing by 0 is not allowed in this type ! ";
         return 0;
     }
     else
@@ -151,7 +145,10 @@ int main()
     auto resultDt = dt.add(2500, 40000);
     std::cout << "result of DoubleType::add() = " << resultDt << std::endl;
 
-    auto resultIt = it.divide(4, 0);
+    auto resultIt = it.divide(4, 2);
+    std::cout << "result of IntType::divide() = " << resultIt << std::endl;
+
+    resultIt = it.divide(5, 0);
     std::cout << "result of IntType::divide() = " << resultIt << std::endl;
 
     std::cout << "good to go !" << std::endl;
