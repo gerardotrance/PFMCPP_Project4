@@ -127,15 +127,32 @@ int IntType::multiply(int lhs, int rhs)
 
 int IntType::divide(int lhs, int rhs)
 {
-    if (lhs || rhs < 1)
+    if (rhs == 0)
     {
         std::cout << "dividing by 0 is not allowed in this type";
+        return 0;
     }
-    return  lhs / rhs;
+    else
+    {
+        return lhs / rhs;
+    } 
 }
 
 #include <iostream>
 int main()
 {
+    FloatType ft;
+    DoubleType dt;
+    IntType it;
+
+    auto resultFt = ft.add(1.5f, 4.5f);
+    std::cout << "result of FloatType::add() = "<< resultFt << std::endl;
+
+    auto resultDt = dt.add(2500, 40000);
+    std::cout << "result of DoubleType::add() = " << resultDt << std::endl;
+
+    auto resultIt = it.divide(4, 0);
+    std::cout << "result of IntType::divide() = " << resultIt << std::endl;
+
     std::cout << "good to go !" << std::endl;
 }
