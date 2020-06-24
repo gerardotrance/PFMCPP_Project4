@@ -298,96 +298,96 @@ FloatType& FloatType::divide(float rhs)
 
 FloatType& FloatType::add(const FloatType& rhs)
 {
-        value += rhs;
+        value += (rhs.value);
         return *this;
 }
 
 FloatType& FloatType::subtract(const FloatType& rhs)
 {
-    value -= rhs;
+    value -= (rhs.value);
     return *this;
 }
 
 FloatType& FloatType::multiply(const FloatType& rhs)
 {
-    value *= rhs;
+    value *= (rhs.value);
     return *this;
 }
 
 FloatType& FloatType::divide(const FloatType& rhs)
 {
-    if (rhs == 0)
+    if ((rhs.value) == 0)
     {
         std::cout << "dividing by 0 is not allowed in this type ! ";
         return 0;
     }
     else
     {
-        value /= rhs;
+        value /= (rhs.value);
         return *this;
     }
 }
 
 FloatType& FloatType::add(const DoubleType& rhs)
 {
-        value += rhs;
+        value += (rhs.value);
         return *this;
 }
 
 FloatType& FloatType::subtract(const DoubleType& rhs)
 {
-    value -= rhs;
+    value -= (rhs.value);
     return *this;
 }
 
 FloatType& FloatType::multiply(const DoubleType& rhs)
 {
-    value *= rhs;
+    value *= (rhs.value);
     return *this;
 }
 
 FloatType& FloatType::divide(const DoubleType& rhs)
 {
-    if (rhs == 0)
+    if ((rhs.value) == 0)
     {
         std::cout << "dividing by 0 is not allowed in this type ! ";
         return 0;
     }
     else
     {
-        value /= rhs;
+        value /= (rhs.value);
         return *this;
     }
 }
 
 FloatType& FloatType::add(const IntType& rhs)
 {
-        value += rhs;
+        value += (rhs.value);
         return *this;
 }
 
 FloatType& FloatType::subtract(const IntType& rhs)
 {
-    value -= rhs;
+    value -= (rhs.value);
     return *this;
 }
 
 FloatType& FloatType::multiply(const IntType& rhs)
 {
-    value *= rhs;
+    value *= (rhs.value);
     return *this;
 }
 
 FloatType& FloatType::divide(const IntType& rhs)
 {
-    if (rhs == 0)
+    if ((rhs.value) == 0)
     {
         std::cout << "dividing by 0 is not allowed in this type ! ";
         return 0;
     }
     else
     {
-        value /= rhs;
+        value /= (rhs.value);
         return *this;
     }
     
@@ -427,64 +427,64 @@ DoubleType& DoubleType::divide(double rhs)
 
 DoubleType& DoubleType::add(const DoubleType& rhs)
 {
-    value += rhs;
+    value += (rhs.value);
     return *this;
 }
 
 DoubleType& DoubleType::subtract(const DoubleType& rhs)
 {
-    value -= rhs;
+    value -= (rhs.value);
     return *this;
 }
 
 DoubleType& DoubleType::multiply(const DoubleType& rhs)
 {
-    value *= rhs;
+    value *= (rhs.value);
     return *this;
 }
 
 DoubleType& DoubleType::divide(const DoubleType& rhs)
 {
-    if (rhs == 0)
+    if ((rhs.value) == 0)
     {
         std::cout << "dividing by 0 is not allowed in this type ! ";
         return 0;
     }
     else
     {
-        value /= rhs;
+        value /= (rhs.value);
         return *this;
     }
 }
 
 DoubleType& DoubleType::add(const FloatType& rhs)
 {
-    value += rhs;
+    value += (rhs.value);
     return *this;
 }
 
 DoubleType& DoubleType::subtract(const FloatType& rhs)
 {
-    value -= rhs;
+    value -= (rhs.value);
     return *this;
 }
 
 DoubleType& DoubleType::multiply(const FloatType& rhs)
 {
-    value *= rhs;
+    value *= (rhs.value);
     return *this;
 }
 
 DoubleType& DoubleType::divide(const FloatType& rhs)
 {
-    if (rhs == 0)
+    if ((rhs.value) == 0)
     {
         std::cout << "dividing by 0 is not allowed in this type ! ";
         return 0;
     }
     else
     {
-        value /= rhs;
+        value /= (rhs.value);
         return *this;
     }
     
@@ -492,32 +492,32 @@ DoubleType& DoubleType::divide(const FloatType& rhs)
 
 DoubleType& DoubleType::add(const IntType& rhs)
 {
-    value += rhs;
+    value += (rhs.value);
     return *this;
 }
 
 DoubleType& DoubleType::subtract(const IntType& rhs)
 {
-    value -= rhs;
+    value -= (rhs.value);
     return *this;
 }
 
 DoubleType& DoubleType::multiply(const IntType& rhs)
 {
-    value *= rhs;
+    value *= (rhs.value);
     return *this;
 }
 
 DoubleType& DoubleType::divide(const IntType& rhs)
 {
-    if (rhs == 0)
+    if ((rhs.value) == 0)
     {
         std::cout << "dividing by 0 is not allowed in this type ! ";
         return 0;
     }
     else
     {
-        value /= rhs;
+        value /= (rhs.value);
         return *this;
     }
     
@@ -557,96 +557,96 @@ IntType& IntType::divide(int rhs)
 
 IntType& IntType::add(const IntType& rhs)
 {
-    value += rhs;
+    value += (rhs.value);
     return *this;
 }
 
 IntType& IntType::subtract(const IntType& rhs)
 {
-    value -= rhs;
+    value -= (rhs.value);
     return *this;
 }
 
 IntType& IntType::multiply(const IntType& rhs)
 {
-    value *= rhs;
+    value *= (rhs.value);
     return *this;
 }
 
 IntType& IntType::divide(const IntType& rhs)
 {
-    if (rhs == 0)
+    if ((rhs.value) == 0)
     {
         std::cout << "dividing by 0 is not allowed in this type ! ";
         return 0;
     }
     else
     {
-        value /= rhs;
+        value /= (rhs.value);
         return *this;
     } 
 }
 
 IntType& IntType::add(const DoubleType& rhs)
 {
-    value += rhs;
+    value += (rhs.value);
     return *this;
 }
 
 IntType& IntType::subtract(const DoubleType& rhs)
 {
-    value -= rhs;
+    value -= (rhs.value);
     return *this;
 }
 
 IntType& IntType::multiply(const DoubleType& rhs)
 {
-    value *= rhs;
+    value *= (rhs.value);
     return *this;
 }
 
 IntType& IntType::divide(const DoubleType& rhs)
 {
-    if (rhs == 0)
+    if ((rhs.value) == 0)
     {
         std::cout << "dividing by 0 is not allowed in this type ! ";
         return 0;
     }
     else
     {
-        value /= rhs;
+        value /= (rhs.value);
         return *this;
     } 
 }
 
 IntType& IntType::add(const FloatType& rhs)
 {
-    value += rhs;
+    value += (rhs.value);
     return *this;
 }
 
 IntType& IntType::subtract(const FloatType& rhs)
 {
-    value -= rhs;
+    value -= (rhs.value);
     return *this;
 }
 
 IntType& IntType::multiply(const FloatType& rhs)
 {
-    value *= rhs;
+    value *= (rhs.value);
     return *this;
 }
 
 IntType& IntType::divide(const FloatType& rhs)
 {
-    if (rhs == 0)
+    if ((rhs.value) == 0)
     {
         std::cout << "dividing by 0 is not allowed in this type ! ";
         return 0;
     }
     else
     {
-        value /= rhs;
+        value /= (rhs.value);
         return *this;
     } 
 }
