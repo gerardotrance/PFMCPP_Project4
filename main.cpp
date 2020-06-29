@@ -175,9 +175,13 @@ good to go!
 
 #include <iostream>
 
+struct IntType;
+struct DoubleType;
+
 struct FloatType
 {
     float* value;
+    float value_;
     FloatType(float value_) : value(new float(value_)){}
     ~FloatType()
     {
@@ -208,6 +212,7 @@ struct FloatType
 struct DoubleType
 {
     double* value;
+    double value_;
     DoubleType(double value_) : value(new double(value_)){}
     ~DoubleType()
     {
@@ -232,11 +237,12 @@ struct DoubleType
     DoubleType& add(const IntType& rhs);
     DoubleType& subtract(const IntType& rhs);
     DoubleType& multiply(const IntType& rhs);
-    DoubleType& divide(const IntTYpe& rhs);
+    DoubleType& divide(const IntType& rhs);
 };
 struct IntType
 {
     int* value;
+    int value_;
     IntType(double value_) : value(new int(value_)){}
     ~IntType()
     {
