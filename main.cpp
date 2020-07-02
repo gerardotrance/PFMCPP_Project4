@@ -183,7 +183,7 @@ struct FloatType
 {
     float* value;
     float value_;
-    FloatType(float value_) : value(new float (value_){}
+    FloatType(float value_) : value(new float (value_)){}
     ~FloatType()
     {
         delete value;
@@ -272,7 +272,7 @@ struct IntType
 };
 
 FloatType& FloatType::add(float rhs)
-{
+{   
     *value += rhs;
     return *this;
 }
