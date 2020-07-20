@@ -37,7 +37,7 @@ struct HeapA
  
  2) give it a constructor that takes the appropriate primitive
     this argument will initialize the owned primitive's value.
-         i.e. if you're owning an int on the heap, your ctor argument will initialize that heap-allocated int's value.
+         i.e. if you're owning an int on the heap, your ctor argument will initialize that heap-allocated int's valu.e
  
  3) modify those add/subtract/divide/multiply member functions from chapter 2 on it
          a) make them modify the owned numeric type
@@ -176,11 +176,11 @@ struct IntType;
 
 struct FloatType
 {
-    FloatType(float rhs)
-    {
-        float* value;
-    }
-    ~FloatType(){}    
+
+    float* valuePtr;
+    
+    FloatType(float value) : valuePtr(new float(value)) {}
+    ~FloatType(){delete valuePtr; valuePtr = nullptr;}    
 
     FloatType& add(float rhs);
     FloatType& subtract(float rhs);
@@ -201,17 +201,14 @@ struct FloatType
     FloatType& subtract( const IntType& rhs );
     FloatType& multiply( const IntType& rhs );
     FloatType& divide( const IntType& rhs );
-    
-    float* value;
 };
 
 struct DoubleType
 {
-    DoubleType(double rhs)
-    {
-        double* value;
-    }
-    ~DoubleType(){}
+    
+    double* valuePtr;
+    DoubleType(float value) : valuePtr(new double(value)) {}
+    ~DoubleType(){delete valuePtr; valuePtr = nullptr;}
 
     DoubleType& add(double rhs );
     DoubleType& subtract(double rhs );
@@ -231,17 +228,14 @@ struct DoubleType
     DoubleType& add( const IntType& rhs );
     DoubleType& subtract( const IntType& rhs );
     DoubleType& multiply( const IntType& rhs );
-    DoubleType& divide( const IntType& rhs )
-
-    double* value;
+    DoubleType& divide( const IntType& rhs );
 };
+
 struct IntType
 {
-    IntType(int rhs)
-    {
-        int* value;
-    }
-    ~IntType(){delete valuePtr;}
+    int* valuePtr;
+    IntType(int value) : valuePtr(new int(value)) {}
+    ~IntType(){delete valuePtr; valuePtr = nullptr;}
 
     IntType& add(int rhs );
     IntType& subtract(int rhs );
@@ -262,296 +256,258 @@ struct IntType
     IntType& subtract( const IntType& rhs );
     IntType& multiply( const IntType& rhs );
     IntType& divide( const IntType& rhs );
-
-    int* value;
 };
 
 FloatType& FloatType::add(float rhs)
 {
-    *value += rhs;
+    *valuePtr += rhs;
     return *this;
 }
 
 FloatType& FloatType::subtract(float rhs)
 {
-    *value -= rhs;
+    *valuePtr -= rhs;
     return *this;
 }
 
  FloatType& FloatType::multiply(float rhs)
 {
-    *value *= rhs;
+    *valuePtr *= rhs;
     return *this;
 }
 
 FloatType& FloatType::divide(float rhs)
 {
-    *value /= rhs;
+    *valuePtr /= rhs;
     return *this;
 }
 
 FloatType& FloatType::add(const FloatType& rhs)
 {
-    *value += (*rhs.value);
-    return *this;
+    return add(*rhs.valuePtr);
 }
 
 FloatType& FloatType::subtract(const FloatType& rhs)
 {
-    *value -= (*rhs.value);
-    return *this;
+     return subtract(*rhs.valuePtr);
 }
 
  FloatType& FloatType::multiply(const FloatType& rhs)
 {
-    *value *= (*rhs.value);
-    return *this;
+    return multiply(*rhs.valuePtr);
 }
 
 FloatType& FloatType::divide(const FloatType& rhs)
 {
-    *value /= (*rhs.value);
-    return *this;
+    return divide(*rhs.valuePtr);
 }
 
 FloatType& FloatType::add(const DoubleType& rhs)
 {
-    *value += (*rhs.value);
-    return *this;
+    return add(*rhs.valuePtr);
 }
 
 FloatType& FloatType::subtract(const DoubleType& rhs)
 {
-    *value -= (*rhs.value);
-    return *this;
+    return subtract(*rhs.valuePtr);
 }
 
  FloatType& FloatType::multiply(const DoubleType& rhs)
 {
-    value *= (rhs.value);
-    return *this;
+    return multiply(*rhs.valuePtr);
 }
 
 FloatType& FloatType::divide(const DoubleType& rhs)
 {
-    value /= (rhs.value);
-    return *this;
+    return divide(*rhs.valuePtr);
 }
 
 FloatType& FloatType::add(const IntType& rhs)
 {
-    value += (rhs.value);
-    return *this;
+    return add(*rhs.valuePtr);
 }
 
 FloatType& FloatType::subtract(const IntType& rhs)
 {
-    value -= (rhs.value);
-    return *this;
+    return subtract(*rhs.valuePtr);
 }
 
  FloatType& FloatType::multiply(const IntType& rhs)
 {
-    value *= (rhs.value);
-    return *this;
+    return multiply(*rhs.valuePtr);
 }
 
 FloatType& FloatType::divide(const IntType& rhs)
 {
-    value /= (rhs.value);
-    return *this;
+    return divide(*rhs.valuePtr);
 }
 
 DoubleType& DoubleType::add(double rhs)
 {
-    value += rhs;
+    *valuePtr += rhs;
     return *this;
 }
 
 DoubleType& DoubleType::subtract(double rhs)
 {
-    value -= rhs;
+    *valuePtr -= rhs;
     return *this;
 }
 
  DoubleType& DoubleType::multiply(double rhs)
 {
-    value *= rhs;
+    *valuePtr *= rhs;
     return *this;
 }
 
 DoubleType& DoubleType::divide(double rhs)
 {
-    value /= rhs;
+    *valuePtr /= rhs;
     return *this;
 }
 
 DoubleType& DoubleType::add(const FloatType& rhs)
 {
-    value += (rhs.value);
-    return *this;
+    return add(*rhs.valuePtr);
 }
 
 DoubleType& DoubleType::subtract(const FloatType& rhs)
 {
-    value -= (rhs.value);
-    return *this;
+    return subtract(*rhs.valuePtr);
 }
 
  DoubleType& DoubleType::multiply(const FloatType& rhs)
 {
-    value *= (rhs.value);
-    return *this;
+    return multiply(*rhs.valuePtr);
 }
 
 DoubleType& DoubleType::divide(const FloatType& rhs)
 {
-    value /= (rhs.value);
-    return *this;
+    return divide(*rhs.valuePtr);
 }
 
 DoubleType& DoubleType::add(const DoubleType& rhs)
 {
-    value += (rhs.value);
-    return *this;
+    return add(*rhs.valuePtr);
 }
 
 DoubleType& DoubleType::subtract(const DoubleType& rhs)
 {
-    value -= (rhs.value);
-    return *this;
+    return subtract(*rhs.valuePtr);
 }
 
  DoubleType& DoubleType::multiply(const DoubleType& rhs)
 {
-    value *= (rhs.value);
-    return *this;
+    return multiply(*rhs.valuePtr);
 }
 
 DoubleType& DoubleType::divide(const DoubleType& rhs)
 {
-    value /= (rhs.value);
-    return *this;
+    return divide(*rhs.valuePtr);
 }
 
 DoubleType& DoubleType::add(const IntType& rhs)
 {
-    value += (rhs.value);
-    return *this;
+    return add(*rhs.valuePtr);
 }
 
 DoubleType& DoubleType::subtract(const IntType& rhs)
 {
-    value -= (rhs.value);
-    return *this;
+    return subtract(*rhs.valuePtr);
 }
 
  DoubleType& DoubleType::multiply(const IntType& rhs)
 {
-    value *= (rhs.value);
-    return *this;
+    return multiply(*rhs.valuePtr);
 }
 
 DoubleType& DoubleType::divide(const IntType& rhs)
 {
-    value /= (rhs.value);
-    return *this;
+    return divide(*rhs.valuePtr);
 }
 
 IntType& IntType::add(int rhs)
 {
-    value += rhs;
+    *valuePtr += rhs;
     return *this;
 }
 
 IntType& IntType::subtract(int rhs)
 {
-    value -= rhs;
+    *valuePtr -= rhs;
     return *this;
 }
 
  IntType& IntType::multiply(int rhs)
 {
-    value *= rhs;
+    *valuePtr *= rhs;
     return *this;
 }
 
 IntType& IntType::divide(int rhs)
 {
-    value /= rhs;
+    *valuePtr /= rhs;
     return *this;
 }
 
 IntType& IntType::add(const FloatType& rhs)
 {
-    value += (rhs.value);
-    return *this;
+    return add(*rhs.valuePtr);
 }
 
 IntType& IntType::subtract(const FloatType& rhs)
 {
-    value -= (rhs.value);
-    return *this;
+    return subtract(*rhs.valuePtr);
 }
 
 IntType& IntType::multiply(const FloatType& rhs)
 {
-    value *= (rhs.value);
-    return *this;
+    return multiply(*rhs.valuePtr);
 }
 
 IntType& IntType::divide(const FloatType& rhs)
 {
-    value /= (rhs.value);
-    return *this;
+    return divide(*rhs.valuePtr);
 }
 
 IntType& IntType::add(const DoubleType& rhs)
 {
-    value += (rhs.value);
-    return *this;
+    return add(*rhs.valuePtr);
 }
 
 IntType& IntType::subtract(const DoubleType& rhs)
 {
-    value -= (rhs.value);
-    return *this;
+    return subtract(*rhs.valuePtr);
 }
 
 IntType& IntType::multiply(const DoubleType& rhs)
 {
-    value *= (rhs.value);
-    return *this;
+    return multiply(*rhs.valuePtr);
 }
 
 IntType& IntType::divide(const DoubleType& rhs)
 {
-    value /= (rhs.value);
-    return *this;
+    return divide(*rhs.valuePtr);
 }
 
 IntType& IntType::add(const IntType& rhs)
 {
-    value += (rhs.value);
-    return *this;
+    return add(*rhs.valuePtr);
 }
 
 IntType& IntType::subtract(const IntType& rhs)
 {
-    value -= (rhs.value);
-    return *this;
+    return subtract(*rhs.valuePtr);
 }
 
 IntType& IntType::multiply(const IntType& rhs)
 {
-    value *= (rhs.value);
-    return *this;
+    return multiply(*rhs.valuePtr);
 }
 
 IntType& IntType::divide(const IntType& rhs)
 {
-    value /= (rhs.value);
-    return *this;
+    return divide(*rhs.valuePtr);
 }
 
 #include <iostream>
