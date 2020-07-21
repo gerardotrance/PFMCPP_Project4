@@ -118,6 +118,7 @@ int main()
     return 0;
 }
 
+*/
 /*
 your program should generate the following output EXACTLY.
 This includes the warnings.
@@ -591,4 +592,4 @@ int main()
     std::cout << "good to go !" << std::endl;
 }
 
-/*
+*/
