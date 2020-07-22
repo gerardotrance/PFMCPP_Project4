@@ -188,20 +188,20 @@ struct FloatType
     FloatType& multiply(float rhs);
     FloatType& divide(float rhs);
 
-    FloatType& add( const FloatType& rhs );
-    FloatType& subtract( const FloatType& rhs );
-    FloatType& multiply( const FloatType& rhs );
-    FloatType& divide( const FloatType& rhs );
+    FloatType& add( const FloatType& ft );
+    FloatType& subtract( const FloatType& ft );
+    FloatType& multiply( const FloatType& ft );
+    FloatType& divide( const FloatType& ft );
     
-    FloatType& add( const DoubleType& rhs );
-    FloatType& subtract( const DoubleType& rhs );
-    FloatType& multiply( const DoubleType& rhs );
-    FloatType& divide( const DoubleType& rhs );
+    FloatType& add( const DoubleType& dt );
+    FloatType& subtract( const DoubleType& dt );
+    FloatType& multiply( const DoubleType& dt );
+    FloatType& divide( const DoubleType& dt );
     
-    FloatType& add( const IntType& rhs );
-    FloatType& subtract( const IntType& rhs );
-    FloatType& multiply( const IntType& rhs );
-    FloatType& divide( const IntType& rhs );
+    FloatType& add( const IntType& it );
+    FloatType& subtract( const IntType& it );
+    FloatType& multiply( const IntType& it );
+    FloatType& divide( const IntType& it );
 };
 
 struct DoubleType
@@ -216,20 +216,20 @@ struct DoubleType
     DoubleType& multiply(double rhs );
     DoubleType& divide(double rhs );
     
-    DoubleType& add( const FloatType& rhs );
-    DoubleType& subtract( const FloatType& rhs );
-    DoubleType& multiply( const FloatType& rhs );
-    DoubleType& divide( const FloatType& rhs );
+    DoubleType& add( const FloatType& ft );
+    DoubleType& subtract( const FloatType& ft );
+    DoubleType& multiply( const FloatType& ft );
+    DoubleType& divide( const FloatType& ft );
     
-    DoubleType& add( const DoubleType& rhs );
-    DoubleType& subtract( const DoubleType& rhs );
-    DoubleType& multiply( const DoubleType& rhs );
-    DoubleType& divide( const DoubleType& rhs );
+    DoubleType& add( const DoubleType& dt );
+    DoubleType& subtract( const DoubleType& dt );
+    DoubleType& multiply( const DoubleType& dt );
+    DoubleType& divide( const DoubleType& dt );
     
-    DoubleType& add( const IntType& rhs );
-    DoubleType& subtract( const IntType& rhs );
-    DoubleType& multiply( const IntType& rhs );
-    DoubleType& divide( const IntType& rhs );
+    DoubleType& add( const IntType& it );
+    DoubleType& subtract( const IntType& it );
+    DoubleType& multiply( const IntType& it );
+    DoubleType& divide( const IntType& it );
 };
 
 struct IntType
@@ -243,20 +243,20 @@ struct IntType
     IntType& multiply(int rhs );
     IntType& divide(int rhs );
     
-    IntType& add( const FloatType& rhs );
-    IntType& subtract( const FloatType& rhs );
-    IntType& multiply( const FloatType& rhs );
-    IntType& divide( const FloatType& rhs );
+    IntType& add( const FloatType& ft );
+    IntType& subtract( const FloatType& ft );
+    IntType& multiply( const FloatType& ft );
+    IntType& divide( const FloatType& ft );
     
-    IntType& add( const DoubleType& rhs );
-    IntType& subtract( const DoubleType& rhs );
-    IntType& multiply( const DoubleType& rhs );
-    IntType& divide( const DoubleType& rhs );
+    IntType& add( const DoubleType& dt );
+    IntType& subtract( const DoubleType& dt );
+    IntType& multiply( const DoubleType& dt );
+    IntType& divide( const DoubleType& dt );
     
-    IntType& add( const IntType& rhs );
-    IntType& subtract( const IntType& rhs );
-    IntType& multiply( const IntType& rhs );
-    IntType& divide( const IntType& rhs );
+    IntType& add( const IntType& it );
+    IntType& subtract( const IntType& it );
+    IntType& multiply( const IntType& it );
+    IntType& divide( const IntType& it );
 };
 
 FloatType& FloatType::add(float rhs)
