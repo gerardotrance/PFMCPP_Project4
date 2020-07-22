@@ -180,7 +180,7 @@ struct FloatType
 
     float* valuePtr;
     
-    FloatType(float value) : valuePtr(new float(value)) {}
+    FloatType(float fvalue) : valuePtr(new float(fvalue)) {}
     ~FloatType(){delete valuePtr; valuePtr = nullptr;}    
 
     FloatType& add(float rhs);
@@ -208,7 +208,7 @@ struct DoubleType
 {
     
     double* valuePtr;
-    DoubleType(float value) : valuePtr(new double(value)) {}
+    DoubleType(float dvalue) : valuePtr(new double(dvalue)) {}
     ~DoubleType(){delete valuePtr; valuePtr = nullptr;}
 
     DoubleType& add(double rhs );
@@ -235,7 +235,7 @@ struct DoubleType
 struct IntType
 {
     int* valuePtr;
-    IntType(int value) : valuePtr(new int(value)) {}
+    IntType(int ivalue) : valuePtr(new int(ivalue)) {}
     ~IntType(){delete valuePtr; valuePtr = nullptr;}
 
     IntType& add(int rhs );
@@ -447,8 +447,16 @@ IntType& IntType::subtract(int rhs)
 
 IntType& IntType::divide(int rhs)
 {
-    *valuePtr /= rhs;
-    return *this;
+    if(rhs != 0)
+    {
+        *valuePtr /= rhs;
+        return *this;
+    }
+    else
+    {
+        std::cout << "dividing by 0 is not allowed in this type ! " << std::endl;
+        return *this;
+    }
 }
 
 IntType& IntType::add(const FloatType& rhs)
