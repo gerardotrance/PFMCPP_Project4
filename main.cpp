@@ -18,7 +18,7 @@ struct A{};
 struct HeapA
 {
     A* pointerToA;
-    HeapA(){ pointerToA = new A();}
+    HeapA() : pointerToA( new A() ) { } //always prefer the member initializer list over in-constructor member initialization
     ~HeapA(){ delete pointerToA;}
 };
 
