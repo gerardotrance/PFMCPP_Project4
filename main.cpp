@@ -294,7 +294,7 @@ FloatType& FloatType::divide( float val )
 {
     if(val == 0.0f)
     {
-        std::cout << "warning, floating point division by zero!" << "\n";
+        std::cout << "warning: floating point division by zero!" << "\n";
     }
     *pt /= val;
     return *this;
@@ -381,7 +381,7 @@ DoubleType& DoubleType::divide( double val)
 {
     if(val == 0.0)
     {
-        std::cout << "warning, floating point division by zero!" << "\n";
+        std::cout << "warning: floating point division by zero!" << "\n";
     }
     *pt /= val;
     return *this;
