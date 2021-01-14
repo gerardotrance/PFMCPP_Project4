@@ -602,7 +602,7 @@ int main()
 
     std::cout << "---------------------\n" << std::endl; 
 
-    std::cout << "good to go!\n";
+    std::cout << "good to go !\n";
 
     return 0;
 }
