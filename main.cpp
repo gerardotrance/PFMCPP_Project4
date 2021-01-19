@@ -559,7 +559,7 @@ int main()
     //assign heap primitives
     FloatType ft ( 2.0f );
     DoubleType dt ( 2 );
-    IntType it ( 2 ) ;
+    IntType it ( 2 );
 
     std::cout << "FloatType add result=" << *ft.add( 2.0f ).pt << std::endl;
     std::cout << "FloatType subtract result=" << *ft.subtract( 2.0f ).pt << std::endl;
