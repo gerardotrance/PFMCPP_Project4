@@ -23,16 +23,14 @@
          this conversion function should be the ONLY WAY to access the held value.
          use the proper casting technique to invoke this conversion function
  
- 6) clean up any forward declaration that you might have.
+ 6) make sure it compiles & runs without errors.
  
- 7) make sure it compiles & runs without errors.
- 
- 8) use your knowledge of casting to remove any conversion warnings. 
+ 7) use your knowledge of casting to remove any conversion warnings. 
 
- 9) insert 'part3();' before the 'good to go' at the end of your main(); 
+ 8) insert 'part3();' before the 'good to go' at the end of your main(); 
         move this part3 function to before main()
 
- 10) click the [run] button.  Clear up any errors or warnings as best you can.
+ 9) click the [run] button.  Clear up any errors or warnings as best you can.
 
  */
 
@@ -104,6 +102,9 @@ error: integer division by zero is an error and will crash the program!
 FloatType x IntType  =  13143546
 (IntType + DoubleType + FloatType) x 24 = 315447336
 good to go!
+
+
+
 
 */
 
