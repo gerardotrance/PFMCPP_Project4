@@ -385,7 +385,7 @@ int main()
     std::cout << "DoubleType add result=" << dt.add(2.0) << std::endl;
     std::cout << "DoubleType subtract result=" << dt.subtract(2.0) << std::endl;
     std::cout << "DoubleType multiply result=" << dt.multiply(2.0) << std::endl;
-    std::cout << "DoubleType divide result=" << dt.divide(5) << std::endl << std::endl;
+    std::cout << "DoubleType divide result=" << dt.divide(5.0) << std::endl << std::endl;
 
     std::cout << "IntType add result=" << it.add(2) << std::endl;
     std::cout << "IntType subtract result=" << it.subtract(2) << std::endl;
@@ -417,14 +417,16 @@ int main()
     std::cout << "New value of dt = dt / 0 = " << dt.divide(0) << std::endl;
 
     std::cout << "---------------------\n" << std::endl; 
+    
+    part3();
 
     std::cout << "good to go!\n";
 
     return 0;
 }
 
-/*
 
+/*
 int main()
 {
     FloatType ft;
@@ -445,5 +447,5 @@ int main()
 
     std::cout << "good to go !" << std::endl;
 }
-
 */
+
